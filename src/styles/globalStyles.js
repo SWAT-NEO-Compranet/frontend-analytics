@@ -1,13 +1,18 @@
 import { createGlobalStyle } from "styled-components"
 
-const color = {
-  primaryColor: "#6900C6",
-  secondaryColor: "#00C8AA",
-  lightColor: "#F3F0FF",
-  darkColor: "#20003D",
-  grayColor: "#F8F8F8",
-  redColor: "#DA009A",
-  orangeColor: "#FF7848"
+export const theme = {
+  color: {
+    primary: "#6900C6",
+    secondary: "#00C8AA",
+    light: "#F3F0FF",
+    gray: "#F8F8F8",
+    dark: "#20003D",
+    red: "#DA009A",
+    orange: "#FF7848"
+  },
+  font: {
+    main: 'Poppins, sans-serif',
+  }
 }
 
 export const GlobalStyle = createGlobalStyle`
@@ -16,9 +21,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    font-family: 'Poppins', sans-serif;
-    background: ${color.primaryColor};
-    color: white;
+    font-family: ${(props) => props.theme.font.main};
     margin: 0;
   }
 
