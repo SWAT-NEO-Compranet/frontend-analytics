@@ -9,7 +9,6 @@ import Dashboard from './containers/Dashboard'
 import Results from './containers/Results'
 
 function App() {
-  console.log('Working')
   return (
     <Router>
       <Switch>
@@ -18,7 +17,6 @@ function App() {
         <Route exact path="/results" component={Results}/>
       </Switch>
     </Router>
-    
   );
 }
 
