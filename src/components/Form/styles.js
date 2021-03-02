@@ -1,14 +1,13 @@
 import styled from 'styled-components'
 
 export const Container = styled.form`
-  background: blue;
   border-radius: 16px;
   background: ${({theme: { color }}) => color.gray}; 
-  margin: 50px auto;
-  padding: 40px 80px 30px;
+  margin: 0 auto;
+  padding: 3em 3em 1em;
   width: 60%;
-  min-height: 500px;
-  position: relative;
+  min-height: auto;
+  //position: relative;
   @media(max-width: 767px){
     padding: 20px 20px 20px;
     width: initial;
@@ -16,14 +15,6 @@ export const Container = styled.form`
   @media(max-width: 1023px){
     width: 90%
   }
-
-  button{
-    position: absolute;
-    bottom: 40px;
-    left: 0;
-    right: 0;
-    }
-
 `
 export const Label = styled.label`
   color: ${({theme: { color }}) => color.primary}; 
@@ -41,6 +32,9 @@ export const Required = styled.span`
 export const Note = styled.span`
   color: ${({theme: { color }}) => color.red}; 
   font-size: 12px;
+  display: block;
+  margin-top: 4em;
+  text-align: right;
 `
 
 export const Input = styled.input`
@@ -53,6 +47,7 @@ export const Input = styled.input`
   font-family: ${({theme}) => theme.font.main};
   color: ${({theme: { color }}) => color.dark};
   padding: 0 5px;
+  margin-bottom: 3em;
 `
 
 export const Dropdown = styled.select`
@@ -66,7 +61,7 @@ export const Dropdown = styled.select`
   font-family: ${({theme}) => theme.font.main};
   color: ${({theme: { color }}) => color.dark};
 
-  @media(max-width: 767px){
+  @media(max-width: 767px) {
     width: 80%;
   }
 `

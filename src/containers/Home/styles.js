@@ -11,7 +11,7 @@ export const Header = styled.header`
   background: ${({theme: { color }}) => color.primary};
   padding: 40px;
   width: 70%;
-  margin: 30px auto 0;
+  margin: 60px auto 0;
   border-radius: 16px;
   display: flex;
   max-height: 240px;
