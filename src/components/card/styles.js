@@ -42,6 +42,9 @@ export const TitleCard = styled.h3`
 
 export const DescriptionCard = styled.p`
   font-size: .75em;
+  /* white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; */
 `
 
 export const Amount = styled.div`
