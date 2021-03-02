@@ -10,7 +10,11 @@ const Form = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log("Enviando datos..." + data.dependencia + data.temporalidad)
+    if(data.dependencia === ""){
+      alert("Llene los campos obligatorios")
+    } else{
+      console.log("Enviando datos..." + data.dependencia + data.temporalidad)
+    }
   }
 
   const handleInputChange = (e) => {
