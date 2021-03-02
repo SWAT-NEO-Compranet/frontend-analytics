@@ -1,13 +1,15 @@
 import React from 'react'
-import { Layout, Footer, Header, Title, Description, Column} from './styles'
-import Illustration from '../../images/Illustration.svg'
+import { Layout, Footer, Header, Title, Description, Column, Logo, Illustration} from './styles'
+import Form from '../../components/Form'
+import illustration from '../../images/Illustration.svg'
+import logo from '../../images/logo.svg'
 
 const Home = () => {
   return (
     <Layout>
-      <h1>Home</h1>
       <Header>
         <Column>
+          <Logo src={logo} alt="logo"/>
           <Title>
           Bienvenido a Analytics
           </Title>
@@ -18,9 +20,10 @@ const Home = () => {
           </Description>
         </Column>
         <Column>
-          <img src={Illustration} alt="illustration"/>
+          <Illustration src={illustration} alt="illustration"/>
         </Column>
       </Header>
+      <Form />
       <Footer>
         Analytics
       </Footer>
