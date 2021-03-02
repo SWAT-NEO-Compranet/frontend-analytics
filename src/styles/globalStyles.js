@@ -8,7 +8,7 @@ export const theme = {
     gray: "#F8F8F8",
     dark: "#20003D",
     red: "#DA009A",
-    orange: "#FF7848"
+    orange: "#FF7848",
   },
   font: {
     main: 'Poppins, sans-serif',
@@ -25,7 +25,7 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1, h2, h3, h4, h5, h6, p {
     margin: 0;
   }
 `
