@@ -19,7 +19,7 @@ const Form = () => {
       console.log('Enviando datos...' + data.dependencia + data.temporalidad)
     }
 
-    history.push('/dashboard')
+    history.push(`/dashboard?dependency=${data.dependencia}`)
   }
 
   const handleInputChange = (e) => {

@@ -6,6 +6,7 @@ export const ChartsWrapper = styled.section`
   margin: 0 2em;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 8% 350px 250px;
   grid-gap: 1em;
 `
 
