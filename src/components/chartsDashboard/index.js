@@ -1,6 +1,9 @@
 import React from 'react'
 import gov from '../../images/gov.svg'
 import folder from '../../images/folder.svg'
+import MainChart from '../MainChart'
+import SecondChart from '../SecondChart'
+import ThirdChart from '../ThirdChart'
 import { ChartsWrapper, Dependence, Icon, Info, Title, Detail, NumberContracts } from './styles'
 
 function ChartDashboard () {
@@ -20,6 +23,11 @@ function ChartDashboard () {
           <Title>3,564</Title>
         </Info>
       </NumberContracts>
+
+      <MainChart />
+      <SecondChart />
+      <ThirdChart />
+
     </ChartsWrapper>
   )
 }
