@@ -1,9 +1,9 @@
 import React from 'react'
-import gov from "../../images/gov.svg"
-import folder from "../../images/folder.svg"
-import { ChartsWrapper, Dependence, Icon, Info, Title, Detail, NumberContracts } from "./styles"
+import gov from '../../images/gov.svg'
+import folder from '../../images/folder.svg'
+import { ChartsWrapper, Dependence, Icon, Info, Title, Detail, NumberContracts } from './styles'
 
-function ChartDashboard() {
+function ChartDashboard () {
   return (
     <ChartsWrapper>
       <Dependence>

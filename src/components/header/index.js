@@ -1,8 +1,8 @@
 import React from 'react'
-import logo from "../../images/logo.svg"
-import { HeaderContainer, Logo, LogoImg } from "./styles"
+import logo from '../../images/logo.svg'
+import { HeaderContainer, Logo, LogoImg } from './styles'
 
-function Header() {
+function Header () {
   return (
     <HeaderContainer>
         <Logo to="/">

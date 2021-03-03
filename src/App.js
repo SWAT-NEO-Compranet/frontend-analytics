@@ -2,13 +2,13 @@ import React from 'react'
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-} from "react-router-dom"; 
+  Route
+} from 'react-router-dom'
 import Home from './containers/Home'
 import Dashboard from './containers/Dashboard'
 import Results from './containers/Results'
 
-function App() {
+function App () {
   return (
     <Router>
       <Switch>
@@ -17,7 +17,7 @@ function App() {
         <Route exact path="/results" component={Results}/>
       </Switch>
     </Router>
-  );
+  )
 }
 
-export default App;
+export default App

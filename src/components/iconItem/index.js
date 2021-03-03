@@ -1,9 +1,8 @@
 import React from 'react'
-import PropTypes from "prop-types"
-import { Icon, Item, IconWrapper } from "./styles"
+import PropTypes from 'prop-types'
+import { Icon, Item, IconWrapper } from './styles'
 
-
-function IconItem({ itemData, itemIcon }) {
+function IconItem ({ itemData, itemIcon }) {
   return (
     <IconWrapper>
       <Icon src={itemIcon} />

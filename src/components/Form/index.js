@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Link from '../Button'
-import { useHistory } from "react-router-dom";
+import { useHistory } from 'react-router-dom'
 import { Container, Label, Required, Note, Input, Dropdown } from './styles'
 
 const Form = () => {
@@ -13,13 +13,13 @@ const Form = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    if(data.dependencia === ""){
-      alert("Llene los campos obligatorios")
-    } else{
-      console.log("Enviando datos..." + data.dependencia + data.temporalidad)
+    if (data.dependencia === '') {
+      alert('Llene los campos obligatorios')
+    } else {
+      console.log('Enviando datos...' + data.dependencia + data.temporalidad)
     }
 
-    history.push("/dashboard")
+    history.push('/dashboard')
   }
 
   const handleInputChange = (e) => {
@@ -57,7 +57,7 @@ const Form = () => {
           </Dropdown>
         </Label>
         <Note>* Campos obligatorios</Note>
-      </Container> 
+      </Container>
       <Link handleSubmit={handleSubmit}>
         Buscar
       </Link>

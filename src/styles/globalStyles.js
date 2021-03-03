@@ -1,19 +1,19 @@
-import { createGlobalStyle } from "styled-components"
+import { createGlobalStyle } from 'styled-components'
 
 export const theme = {
   color: {
-    primary: "#6900C6",
-    secondary: "#00C8AA",
-    light: "#F3F0FF",
-    gray: "#F8F8F8",
-    dark: "#20003D",
-    red: "#DA009A",
-    orange: "#FF7848",
+    primary: '#6900C6',
+    secondary: '#00C8AA',
+    light: '#F3F0FF',
+    gray: '#F8F8F8',
+    dark: '#20003D',
+    red: '#DA009A',
+    orange: '#FF7848'
   },
   font: {
-    main: 'Poppins, sans-serif',
+    main: 'Poppins, sans-serif'
   },
-  shadow: "0px 0px 15px 1px rgb(0 0 0 / 12%)"
+  shadow: '0px 0px 15px 1px rgb(0 0 0 / 12%)'
 }
 
 export const GlobalStyle = createGlobalStyle`

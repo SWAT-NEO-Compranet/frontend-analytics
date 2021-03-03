@@ -1,12 +1,12 @@
-import styled from "styled-components"
-import { Link } from "react-router-dom"
+import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 export const HeaderContainer = styled.header`
   height: 70px;
   display: flex;
   align-items: center;
   padding-left: 2em;
-  background: ${({theme: {color}}) => color.dark};
+  background: ${({ theme: { color } }) => color.dark};
   margin-bottom: 1em;
 `
 

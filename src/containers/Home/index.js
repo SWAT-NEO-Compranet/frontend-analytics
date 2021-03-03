@@ -1,5 +1,5 @@
 import React from 'react'
-import { Layout, Footer, Header, Title, Description, Column, Logo, Illustration} from './styles'
+import { Layout, Footer, Header, Title, Description, Column, Logo, Illustration } from './styles'
 import Form from '../../components/Form'
 import illustration from '../../images/Illustration.svg'
 import logo from '../../images/logo.svg'

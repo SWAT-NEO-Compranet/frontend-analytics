@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
-import Header from "../../components/header"
-import ChartDashboard from "../../components/chartsDashboard"
-import CardDashboard from "../../components/cardsDashboard"
-import arrow from "../../images/arrow.svg"
-import { Layout, Menu, DashboardContent, ToogleBar, ToogleButton, ToogleArrow, MenuForm } from "./styles"
-import { Label, Input, Dropdown } from "../../components/Form/styles"
+import Header from '../../components/header'
+import ChartDashboard from '../../components/chartsDashboard'
+import CardDashboard from '../../components/cardsDashboard'
+import arrow from '../../images/arrow.svg'
+import { Layout, Menu, DashboardContent, ToogleBar, ToogleButton, ToogleArrow, MenuForm } from './styles'
+import { Label, Input, Dropdown } from '../../components/Form/styles'
 
 const Dashboard = () => {
   const [active, setActive] = useState(true)
@@ -19,7 +19,7 @@ const Dashboard = () => {
       <Layout>
         {
           active
-          ? <Menu showed>
+            ? <Menu showed>
             <MenuForm showed>
               <Label>
                 <span>Dependencia</span>
@@ -39,7 +39,7 @@ const Dashboard = () => {
               </Label>
             </MenuForm>
           </Menu>
-          : <Menu>
+            : <Menu>
             <MenuForm>
             <Label>
                 <span>Dependencia</span>
@@ -58,15 +58,14 @@ const Dashboard = () => {
                 </Dropdown>
               </Label>
             </MenuForm>
-          </Menu> 
+          </Menu>
         }
-
 
         <ToogleBar>
           <ToogleButton onClick={toogleMenu}>
-            {active 
-            ? <ToogleArrow src={arrow} showed />
-            : <ToogleArrow src={arrow} />}
+            {active
+              ? <ToogleArrow src={arrow} showed />
+              : <ToogleArrow src={arrow} />}
           </ToogleButton>
         </ToogleBar>
         <DashboardContent>

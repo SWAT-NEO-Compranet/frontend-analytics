@@ -3,7 +3,7 @@ import { Link } from './styles'
 import PropTypes from 'prop-types'
 
 const LinkButton = ({ children, handleSubmit }) => {
-  return(
+  return (
     <Link onClick={handleSubmit}>
       {children}
     </Link>
@@ -16,4 +16,4 @@ LinkButton.propTypes = {
   handleSubmit: PropTypes.func
 }
 
-export default LinkButton;
+export default LinkButton
