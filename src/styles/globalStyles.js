@@ -12,7 +12,8 @@ export const theme = {
   },
   font: {
     main: 'Poppins, sans-serif',
-  }
+  },
+  shadow: "0px 0px 15px 1px rgb(0 0 0 / 12%)"
 }
 
 export const GlobalStyle = createGlobalStyle`

@@ -15,6 +15,7 @@ export const Header = styled.header`
   border-radius: 16px;
   display: flex;
   max-height: 240px;
+
   @media(max-width:1023px){
     flex-direction:column;
     max-height: initial;

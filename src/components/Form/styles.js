@@ -7,7 +7,9 @@ export const Container = styled.form`
   padding: 3em 3em 1em;
   width: 60%;
   min-height: auto;
+  box-shadow: ${({theme}) => theme.shadow};
   //position: relative;
+  
   @media(max-width: 767px){
     padding: 20px 20px 20px;
     width: initial;
@@ -41,6 +43,7 @@ export const Input = styled.input`
   background-color: ${({theme: { color }}) => color.light};
   border: 1px solid;
   width: 100%;
+  display: block;
   height: 30px;
   border-radius: 8px;
   outline-color: ${({theme: { color }}) => color.primary};
@@ -54,7 +57,7 @@ export const Dropdown = styled.select`
   display: block;
   background: ${({theme: { color }}) => color.light};
   border: 1px solid;
-  width: 50%;
+  width: 100%;
   height: 30px;
   border-radius: 8px;
   outline-color: ${({theme: { color }}) => color.primary};
