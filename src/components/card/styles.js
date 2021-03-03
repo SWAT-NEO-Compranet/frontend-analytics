@@ -1,12 +1,14 @@
 import styled from "styled-components"
 
 export const CardWrapper = styled.div`
-  background: ${({theme: {color}}) => color.light};
+  background: ${({theme: {color}}) => color.gray};
   color: ${({theme: { color }}) => color.dark};
+  box-shadow: ${({theme}) => theme.shadow};
   border-top-right-radius: 1em;
   border-bottom-right-radius: 1em;
   border-left: 4px solid ${({theme: {color}}) => color.secondary};
-  height: 250px;
+  min-height: 225px;
+  //height: auto;
   margin-bottom: 1em;
   display: flex;
   justify-content: space-between;

@@ -6,14 +6,22 @@ export const Layout = styled.section`
 `
 
 export const Menu = styled.aside`
-  background: ${({theme}) => theme.color.light};
+  background: ${({theme}) => theme.color.gray};
   width: ${({showed}) => showed ? '300px' : '0px'};
   transition: .6s;
+  padding: ${({showed}) => showed ? "1em" : 0};
+  box-shadow: ${({theme}) => theme.shadow};
+`
+
+export const MenuForm = styled.div`
+  opacity: ${({showed}) => showed ? "" : "0"};
+  transition: .4s;
 `
 
 export const ToogleBar = styled.div`
   background: ${({theme: {color}}) => color.secondary};
-  width: 40px;
+  width: 30px;
+  border-top-right-radius: .5em;
 `
 
 export const ToogleButton = styled.div`
@@ -23,6 +31,7 @@ export const ToogleButton = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  border-top-right-radius: .5em;
 `
 
 export const ToogleArrow = styled.img`
