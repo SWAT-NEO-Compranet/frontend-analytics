@@ -1,12 +1,12 @@
-import styled from "styled-components"
+import styled from 'styled-components'
 
 export const CardWrapper = styled.div`
-  background: ${({theme: {color}}) => color.gray};
-  color: ${({theme: { color }}) => color.dark};
-  box-shadow: ${({theme}) => theme.shadow};
+  background: ${({ theme: { color } }) => color.gray};
+  color: ${({ theme: { color } }) => color.dark};
+  box-shadow: ${({ theme }) => theme.shadow};
   border-top-right-radius: 1em;
   border-bottom-right-radius: 1em;
-  border-left: 4px solid ${({theme: {color}}) => color.secondary};
+  border-left: 4px solid ${({ theme: { color } }) => color.secondary};
   min-height: 225px;
   //height: auto;
   margin-bottom: 1em;
@@ -61,8 +61,8 @@ export const AmountImage = styled.img`
 
 export const AmountNumber = styled.span`
   //background: rgba(105, 0, 198, 0.5);
-  //color: ${({theme: {color}}) => color.light};
-  color: ${({theme: {color}}) => color.primary};
+  //color: ${({ theme: { color } }) => color.light};
+  color: ${({ theme: { color } }) => color.primary};
   font-weight: bold;
   font-size: .9em;
   padding: 0 .8em;

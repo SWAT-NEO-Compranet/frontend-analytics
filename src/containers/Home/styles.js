@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from 'styled-components'
 
 export const Layout = styled.section`
   display: flex;
@@ -8,7 +8,7 @@ export const Layout = styled.section`
 `
 
 export const Header = styled.header`
-  background: ${({theme: { color }}) => color.primary};
+  background: ${({ theme: { color } }) => color.primary};
   padding: 40px;
   width: 70%;
   margin: 60px auto 0;
@@ -39,7 +39,7 @@ export const Illustration = styled.img`
 `
 
 export const Title = styled.h1`
-  color: ${({theme: { color }}) => color.light};
+  color: ${({ theme: { color } }) => color.light};
   font-size: 36px;
   @media(max-width:1439px){
     font-size: 24px;
@@ -47,7 +47,7 @@ export const Title = styled.h1`
 `
 
 export const Description = styled.p`
-  color: ${({theme: { color }}) => color.light};
+  color: ${({ theme: { color } }) => color.light};
   font-size: 14px;
 `
 
@@ -57,8 +57,8 @@ export const Column = styled.div`
 `
 
 export const Footer = styled.footer`
-  background: ${({theme: { color }}) => color.dark};
-  color: ${({theme: { color }}) => color.light};
+  background: ${({ theme: { color } }) => color.dark};
+  color: ${({ theme: { color } }) => color.light};
   padding: 30px;
   text-align: center;
   font-weight: bold;

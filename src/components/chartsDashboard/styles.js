@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from 'styled-components'
 
 export const ChartsWrapper = styled.section`
   grid-column: 1 / 4;
@@ -10,14 +10,14 @@ export const ChartsWrapper = styled.section`
 `
 
 export const Dependence = styled.div`
-  background: ${({theme: {color}}) => color.gray};
+  background: ${({ theme: { color } }) => color.gray};
   max-height: 120px;
   border-radius: 1em;
   grid-column: 1 / 4;
   display: flex;
   align-items: center;
   padding-left: 1.5em;
-  box-shadow: ${({theme}) => theme.shadow};
+  box-shadow: ${({ theme }) => theme.shadow};
 `
 
 export const Icon = styled.img`
@@ -29,7 +29,7 @@ export const Info = styled.div`
 `
 
 export const Title = styled.h2`
-  color: ${({theme: {color}}) => color.orange};
+  color: ${({ theme: { color } }) => color.orange};
   font-size: 1em;
 `
 

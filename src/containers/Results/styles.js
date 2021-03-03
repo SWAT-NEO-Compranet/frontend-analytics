@@ -11,22 +11,22 @@ export const Logo = styled.img`
 `
 
 export const ContractCard = styled.div`
-  background: ${({theme: { color }}) => color.gray};
+  background: ${({ theme: { color } }) => color.gray};
   border-radius: 16px;
   padding: 20px 30px;
 `
 
 export const Description = styled.p`
-  color: ${({theme: { color }}) => color.dark};
+  color: ${({ theme: { color } }) => color.dark};
 `
 
 export const Title = styled.h1`
-  color: ${({theme: { color }}) => color.dark};
+  color: ${({ theme: { color } }) => color.dark};
   font-size: 1.5em;
 `
 
 export const Subtitle = styled.h2`
-  color: ${({theme: { color }}) => color.dark};
+  color: ${({ theme: { color } }) => color.dark};
   font-size: 1.2em;
   margin: 20px 0 10px 40px;
 `
@@ -45,7 +45,7 @@ export const RightIcons = styled.div`
 `
 
 export const InfoContainer = styled.section`
-  background: ${({theme: { color }}) => color.gray};
+  background: ${({ theme: { color } }) => color.gray};
   display: flex;
   padding: 20px 40px; 
   border-radius: 16px;
@@ -54,7 +54,7 @@ export const InfoContainer = styled.section`
 `
 
 export const InfoCell = styled.div`
-  background: ${({theme: { color }}) => color.light};
+  background: ${({ theme: { color } }) => color.light};
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -66,9 +66,9 @@ export const InfoCell = styled.div`
 
 export const Campo = styled.h3`
   font-size: 1rem;
-  color: ${({theme: { color }}) => color.dark};
+  color: ${({ theme: { color } }) => color.dark};
 `
 
 export const Valor = styled.p`
-  color: ${({theme: { color }}) => color.dark};
+  color: ${({ theme: { color } }) => color.dark};
 `

@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from 'styled-components'
 
 export const CardsWrapper = styled.section`
   grid-column: 4 / 6;
@@ -6,7 +6,6 @@ export const CardsWrapper = styled.section`
 `
 
 export const Subtitle = styled.h4`
-  color: ${({theme}) => theme.color.orange};
+  color: ${({ theme }) => theme.color.orange};
   
 `
-
