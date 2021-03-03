@@ -28,7 +28,7 @@ function Card () {
           <IconItem itemIcon={calendar} itemData="Inicio de Contrato" />
         </IconsCard>
       </CardInfo>
-      <CardLink>
+      <CardLink to="/results">
         <img src={arrow} />
       </CardLink>
     </CardWrapper>

@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 export const CardWrapper = styled.div`
   background: ${({ theme: { color } }) => color.gray};
@@ -22,7 +23,7 @@ export const CardInfo = styled.div`
   width: 90%;
 `
 
-export const CardLink = styled.div`
+export const CardLink = styled(Link)`
   padding: 0 1em;
   border-bottom-right-radius: 16px;
   border-top-right-radius: 16px;
