@@ -5,7 +5,11 @@ export const CardsWrapper = styled.section`
   margin-right: 1em;
   max-height: 90%;
   overflow: scroll;
-  //scroll-snap-type: y mandatory;
+  
+  @media (max-width: 768px) {
+    grid-column: 1 / 4;
+    grid-row: 2;
+  }
 `
 
 export const Subtitle = styled.h4`
