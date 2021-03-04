@@ -40,7 +40,7 @@ export const Note = styled.span`
 `
 
 export const Input = styled.input`
-  background-color: ${({ theme: { color } }) => color.light};
+  background-color: transparent;
   border: 1px solid;
   width: 100%;
   display: block;
@@ -55,7 +55,7 @@ export const Input = styled.input`
 
 export const Dropdown = styled.select`
   display: block;
-  background: ${({ theme: { color } }) => color.light};
+  background: transparent;
   border: 1px solid;
   width: 100%;
   height: 30px;
