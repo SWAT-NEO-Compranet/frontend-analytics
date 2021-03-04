@@ -13,6 +13,7 @@ export const CardWrapper = styled.div`
   margin-bottom: 1em;
   display: flex;
   justify-content: space-between;
+  //scroll-snap-align: start;
 `
 
 export const CardInfo = styled.div`

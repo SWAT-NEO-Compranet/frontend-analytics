@@ -6,7 +6,7 @@ export const ChartsWrapper = styled.section`
   margin: 0 2em;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: 8% 350px 250px;
+  grid-template-rows: 12% 500px 250px;
   grid-gap: 1em;
 `
 
@@ -30,7 +30,7 @@ export const Info = styled.div`
 `
 
 export const Title = styled.h2`
-  color: ${({ theme: { color } }) => color.orange};
+  color: ${({ theme: { color } }) => color.primary};
   font-size: 1em;
 `
 

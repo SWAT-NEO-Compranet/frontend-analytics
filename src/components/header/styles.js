@@ -7,7 +7,7 @@ export const HeaderContainer = styled.header`
   align-items: center;
   padding-left: 2em;
   background: ${({ theme: { color } }) => color.dark};
-  margin-bottom: 1em;
+  margin-bottom: 2em;
 `
 
 export const Logo = styled(Link)`
