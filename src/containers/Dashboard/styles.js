@@ -11,6 +11,11 @@ export const Menu = styled.aside`
   transition: .6s;
   padding: ${({ showed }) => showed ? '1em' : 0};
   box-shadow: ${({ theme }) => theme.shadow};
+
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `
 
 export const MenuForm = styled.div`
@@ -22,6 +27,10 @@ export const ToogleBar = styled.div`
   background: ${({ theme: { color } }) => color.gray};
   width: 30px;
   border-top-right-radius: .5em;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `
 
 export const ToogleButton = styled.div`

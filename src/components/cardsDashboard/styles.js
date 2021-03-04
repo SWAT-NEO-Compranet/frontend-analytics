@@ -9,6 +9,7 @@ export const CardsWrapper = styled.section`
   @media (max-width: 768px) {
     grid-column: 1 / 4;
     grid-row: 2;
+    margin: 0 2em;
   }
 `
 
