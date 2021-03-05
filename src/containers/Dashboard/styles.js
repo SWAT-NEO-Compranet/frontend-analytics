@@ -2,7 +2,15 @@ import styled from 'styled-components'
 
 export const Layout = styled.section`
   display: flex;
-  height: 100vh;
+  height: 115vh;
+
+  @media (max-width: 768px) {
+    height: 173vh;
+  }
+
+  @media (max-width: 426px) {
+    height: 205vh;
+  }
 `
 
 export const Menu = styled.aside`
