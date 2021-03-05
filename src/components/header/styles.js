@@ -8,6 +8,10 @@ export const HeaderContainer = styled.header`
   padding-left: 2em;
   background: ${({ theme: { color } }) => color.dark};
   margin-bottom: 2em;
+
+  @media print{
+    display: none;
+  }
 `
 
 export const Logo = styled(Link)`

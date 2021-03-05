@@ -6,4 +6,8 @@ export const FooterWrapper = styled.footer`
   padding: 30px;
   text-align: center;
   font-weight: bold;
+
+  @media print{
+      display: none;
+  }
 `
