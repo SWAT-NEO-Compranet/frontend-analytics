@@ -4,7 +4,7 @@ import Footer from '../../components/Footer'
 import ChartDashboard from '../../components/chartsDashboard'
 import CardDashboard from '../../components/cardsDashboard'
 import arrow from '../../images/arrow.svg'
-import { Layout, Menu, DashboardContent, ToogleBar, ToogleButton, ToogleArrow, MenuForm } from './styles'
+import { Layout, Menu, DashboardContent, ToogleBar, ToogleButton, ToogleArrow, MenuForm, Print } from './styles'
 import { Label, Input, Dropdown } from '../../components/Form/styles'
 
 const Dashboard = () => {
@@ -39,6 +39,7 @@ const Dashboard = () => {
                 </Dropdown>
               </Label>
             </MenuForm>
+            <Print onClick={window.print}>Imprimir</Print>
           </Menu>
             : <Menu>
             <MenuForm>

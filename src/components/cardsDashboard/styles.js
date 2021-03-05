@@ -11,6 +11,11 @@ export const CardsWrapper = styled.section`
     grid-row: 2;
     margin: 0 2em;
   }
+
+  @media print{
+    overflow: initial;
+    page-break-after: always;
+  }
 `
 
 export const Subtitle = styled.h4`
