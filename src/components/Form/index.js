@@ -1,15 +1,15 @@
 import React, { useState } from 'react'
 import Link from '../Button'
-import { useHistory } from 'react-router-dom'
+// import { useHistory } from 'react-router-dom'
 import { Container, Label, Required, Note, Input, Dropdown } from './styles'
 import { dependencies } from '../../utils/dependencies'
 
 const Form = () => {
-  const history = useHistory()
+  // const history = useHistory()
 
   const [data, setData] = useState({
-    dependencia: '',
-    temporalidad: ''
+    dependencia: ''
+    // temporalidad: ''
   })
 
   const handleSubmit = (e) => {
@@ -17,10 +17,23 @@ const Form = () => {
     if (data.dependencia === '') {
       alert('Llene los campos obligatorios')
     } else {
-      console.log('Enviando datos...' + data.dependencia + data.temporalidad)
+      // console.log(data)
+      fetch('https://neo-analytics-backend.herokuapp.com/api/dependencies/details', {
+        method: 'POST',
+        headers: {
+          // Accept: 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          name: data.dependencia
+        })
+      })
+        .then(res => res.json())
+        // .then(({ dependence }) => setSearch(dependence))
+        .then(response => console.log(response))
     }
 
-    history.push('/dashboard')
+    // history.push(`/dashboard?name=${search?.name}`)
   }
 
   const handleInputChange = (e) => {
@@ -40,6 +53,7 @@ const Form = () => {
 
   return (
     <>
+      {/* <div>{search?.name}</div> */}
       <Container>
         <Label>
           Dependencia <Required>*</Required>
