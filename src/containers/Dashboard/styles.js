@@ -71,3 +71,18 @@ export const DashboardContent = styled.main`
     grid-template-rows: 1200px 500px;
   }
 `
+
+export const Print = styled.button`
+  display: block;
+  margin: 20px auto;
+  text-decoration: none;
+  padding: 1em 2em;
+  border-radius: 8px;
+  background: ${({ theme: { color } }) => color.secondary};
+  border: none;
+  color: ${({ theme: { color } }) => color.gray};
+  font-weight: bold;
+  text-transform: uppercase;
+  position:relative;
+  margin-top: 90vh;
+`
