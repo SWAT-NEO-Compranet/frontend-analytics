@@ -55,11 +55,3 @@ export const Column = styled.div`
   width: 100%;
   position: relative;
 `
-
-export const Footer = styled.footer`
-  background: ${({ theme: { color } }) => color.dark};
-  color: ${({ theme: { color } }) => color.light};
-  padding: 30px;
-  text-align: center;
-  font-weight: bold;
-`

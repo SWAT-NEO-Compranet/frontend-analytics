@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Header from '../../components/header'
+import Footer from '../../components/Footer'
 import ChartDashboard from '../../components/chartsDashboard'
 import CardDashboard from '../../components/cardsDashboard'
 import arrow from '../../images/arrow.svg'
@@ -73,6 +74,7 @@ const Dashboard = () => {
           <CardDashboard />
         </DashboardContent>
       </Layout>
+      <Footer />
     </>
   )
 }

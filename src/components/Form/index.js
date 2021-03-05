@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Link from '../Button'
 import { useHistory } from 'react-router-dom'
 import { Container, Label, Required, Note, Input, Dropdown } from './styles'
+import { dependencies } from '../../utils/dependencies'
 
 const Form = () => {
   const history = useHistory()
@@ -19,7 +20,7 @@ const Form = () => {
       console.log('Enviando datos...' + data.dependencia + data.temporalidad)
     }
 
-    history.push(`/dashboard?dependency=${data.dependencia}`)
+    history.push('/dashboard')
   }
 
   const handleInputChange = (e) => {
@@ -42,7 +43,15 @@ const Form = () => {
       <Container>
         <Label>
           Dependencia <Required>*</Required>
-          <Input onChange={handleInputChange} type="text" name="dependencia"/>
+          {/* <Input onChange={handleInputChange} type="text" name="dependencia"/> */}
+          <Input list="dependencias" onChange={handleInputChange} name="dependencia" />
+          <datalist id="dependencias">
+            {
+              dependencies.map(item => (
+                <option value={item} key={item}></option>
+              ))
+            }
+          </datalist>
         </Label>
         <Label>
           Temporalidad
