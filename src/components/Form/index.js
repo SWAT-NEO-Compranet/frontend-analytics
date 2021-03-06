@@ -23,13 +23,12 @@ const Form = ({ handleSearch, setState, state }) => {
   const handleDropdownChange = (e) => {
     setState({
       ...state,
-      temporalidad: e.target.value
+      interval: e.target.value
     })
   }
 
   return (
     <>
-      {/* <div>{search?.name}</div> */}
       <Container>
         <Label>
           Dependencia <Required>*</Required>
@@ -46,13 +45,11 @@ const Form = ({ handleSearch, setState, state }) => {
         <Label>
           Temporalidad
           <Dropdown onChange={handleDropdownChange}>
-            <option></option>
-            <option value="ultimo-mes" name="ultimo-mes">Último mes</option>
-            <option value="3-meses" name="3-meses">3 meses</option>
-            <option value="6-meses" name="6-meses">6 meses</option>
-            <option value="ultimo-anho" name="ultimo-anho">Último año</option>
-            <option value="2020" name="2020">2020</option>
-            <option value="2019" name="2019">2019</option>
+            {/* <option></option> */}
+            <option value="1" name="ultimo-mes">Último mes</option>
+            <option value="3" name="3-meses">3 meses</option>
+            <option value="6" name="6-meses">6 meses</option>
+            <option value="12" name="ultimo-anho">Último año</option>
           </Dropdown>
         </Label>
         <Note>* Campos obligatorios</Note>

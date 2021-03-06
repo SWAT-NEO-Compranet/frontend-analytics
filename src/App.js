@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import {
-  BrowserRouter as Router,
   Switch,
-  Route
+  Route,
+  withRouter,
+  useHistory
 } from 'react-router-dom'
 import Home from './containers/Home'
 import Form from './components/Form'
@@ -13,14 +14,15 @@ import CardDashboard from './components/cardsDashboard'
 import PropTypes from 'prop-types'
 
 function App () {
-  // const history = useHistory()
+  const history = useHistory()
 
   const [state, setState] = useState({
-    search: null,
-    dependence: null
+    dependence: null,
+    interval: null,
+    search: null
   })
 
-  const handleSearch = (e, history) => {
+  const handleSearch = (e) => {
     e.preventDefault()
     fetch('https://neo-analytics-backend.herokuapp.com/api/dependencies/details', {
       method: 'POST',
@@ -28,25 +30,24 @@ function App () {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        name: state.dependence
+        name: state.dependence,
+        interval: state.interval
       })
     })
       .then(res => res.json())
       // .then(data => setState({ ...state, search: data }))
       // .then(data => console.log(data.dependence.name))
       .then(({ dependence }) => setState({ ...state, search: dependence }))
-    console.log(state.search?.acronyms)
 
-    // history.push('/dashboard')
+    history.push('/dashboard')
   }
 
   return (
-    <Router>
+
       <Switch>
           <Route exact path="/">
             <Home>
               <Form handleSearch={handleSearch} setState={setState} state={state} />
-              <p>{state.search?.acronyms}</p>
             </Home>
           </Route>
           <Route exact path="/results">
@@ -55,13 +56,12 @@ function App () {
           <Route exact path="/dashboard">
             <Dashboard>
               <ChartDashboard state={state.search} />
-              <CardDashboard />
+              <CardDashboard cards={state.search} />
             </Dashboard>
           </Route>
 
       </Switch>
 
-    </Router>
   )
 }
 
@@ -69,4 +69,4 @@ App.propTypes = {
   history: PropTypes.object
 }
 
-export default App
+export default withRouter(App)

@@ -8,20 +8,21 @@ import { ChartsWrapper, Dependence, Icon, Info, Title, Detail, NumberContracts }
 import PropTypes from 'prop-types'
 
 function ChartDashboard ({ state }) {
+  // console.log(state)
   return (
     <ChartsWrapper>
       <Dependence>
         <Icon src={gov} alt="Dependencia" />
         <Info>
           <Title>{state?.name}</Title>
-          <Detail>Nivel: federal</Detail>
+          <Detail>{state?.acronyms}</Detail>
         </Info>
       </Dependence>
       <NumberContracts>
         <Icon src={folder} alt="Contratos encontrados" />
         <Info>
           <Detail>Contratos encontrados</Detail>
-          <Title>3,564</Title>
+          <Title>{state?.contracts.total}</Title>
         </Info>
       </NumberContracts>
 
