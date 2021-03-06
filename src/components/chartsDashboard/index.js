@@ -5,14 +5,15 @@ import MainChart from '../MainChart'
 import SecondChart from '../SecondChart'
 import ThirdChart from '../ThirdChart'
 import { ChartsWrapper, Dependence, Icon, Info, Title, Detail, NumberContracts } from './styles'
+import PropTypes from 'prop-types'
 
-function ChartDashboard () {
+function ChartDashboard ({ state }) {
   return (
     <ChartsWrapper>
       <Dependence>
         <Icon src={gov} alt="Dependencia" />
         <Info>
-          <Title>Dependencia encontrada</Title>
+          <Title>{state?.name}</Title>
           <Detail>Nivel: federal</Detail>
         </Info>
       </Dependence>
@@ -30,6 +31,10 @@ function ChartDashboard () {
 
     </ChartsWrapper>
   )
+}
+
+ChartDashboard.propTypes = {
+  state: PropTypes.object
 }
 
 export default ChartDashboard

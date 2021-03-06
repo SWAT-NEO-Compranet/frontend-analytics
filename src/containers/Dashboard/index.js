@@ -1,13 +1,12 @@
 import React, { useState } from 'react'
 import Header from '../../components/header'
 import Footer from '../../components/Footer'
-import ChartDashboard from '../../components/chartsDashboard'
-import CardDashboard from '../../components/cardsDashboard'
 import arrow from '../../images/arrow.svg'
 import { Layout, Menu, DashboardContent, ToogleBar, ToogleButton, ToogleArrow, MenuForm } from './styles'
 import { Label, Input, Dropdown } from '../../components/Form/styles'
+import PropTypes from 'prop-types'
 
-const Dashboard = () => {
+const Dashboard = ({ children }) => {
   const [active, setActive] = useState(true)
 
   const toogleMenu = () => {
@@ -70,13 +69,16 @@ const Dashboard = () => {
           </ToogleButton>
         </ToogleBar>
         <DashboardContent>
-          <ChartDashboard />
-          <CardDashboard />
+          {children}
         </DashboardContent>
       </Layout>
       <Footer />
     </>
   )
+}
+
+Dashboard.propTypes = {
+  children: PropTypes.string
 }
 
 export default Dashboard

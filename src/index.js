@@ -4,15 +4,12 @@ import App from './App'
 import reportWebVitals from './reportWebVitals'
 import { GlobalStyle, theme } from './styles/globalStyles'
 import { ThemeProvider } from 'styled-components'
-import searchState from './context/Search/searchState'
 
 ReactDOM.render(
   <React.StrictMode>
       <ThemeProvider theme={theme}>
         <GlobalStyle />
-        <searchState>
           <App />
-        </searchState>
       </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root')

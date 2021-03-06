@@ -1,52 +1,28 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Link from '../Button'
 // import { useHistory } from 'react-router-dom'
 import { Container, Label, Required, Note, Input, Dropdown } from './styles'
 import { dependencies } from '../../utils/dependencies'
+import PropTypes from 'prop-types'
 
-const Form = () => {
+const Form = ({ handleSearch, setState, state }) => {
   // const history = useHistory()
 
-  const [data, setData] = useState({
-    dependencia: ''
-    // temporalidad: ''
-  })
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    if (data.dependencia === '') {
-      alert('Llene los campos obligatorios')
-    } else {
-      // console.log(data)
-      fetch('https://neo-analytics-backend.herokuapp.com/api/dependencies/details', {
-        method: 'POST',
-        headers: {
-          // Accept: 'application/json',
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          name: data.dependencia
-        })
-      })
-        .then(res => res.json())
-        // .then(({ dependence }) => setSearch(dependence))
-        .then(response => console.log(response))
-    }
-
-    // history.push(`/dashboard?name=${search?.name}`)
-  }
+  // const [data, setData] = useState({
+  //   dependencia: ''
+  //   // temporalidad: ''
+  // })
 
   const handleInputChange = (e) => {
-    setData({
-      ...data,
+    setState({
+      ...state,
       [e.target.name]: e.target.value
     })
   }
 
   const handleDropdownChange = (e) => {
-    console.log(e.target)
-    setData({
-      ...data,
+    setState({
+      ...state,
       temporalidad: e.target.value
     })
   }
@@ -58,7 +34,7 @@ const Form = () => {
         <Label>
           Dependencia <Required>*</Required>
           {/* <Input onChange={handleInputChange} type="text" name="dependencia"/> */}
-          <Input list="dependencias" onChange={handleInputChange} name="dependencia" />
+          <Input list="dependencias" onChange={handleInputChange} name="dependence" />
           <datalist id="dependencias">
             {
               dependencies.map(item => (
@@ -81,11 +57,17 @@ const Form = () => {
         </Label>
         <Note>* Campos obligatorios</Note>
       </Container>
-      <Link handleSubmit={handleSubmit}>
+      <Link handleSubmit={handleSearch}>
         Buscar
       </Link>
     </>
   )
+}
+
+Form.propTypes = {
+  handleSearch: PropTypes.func,
+  state: PropTypes.object,
+  setState: PropTypes.object
 }
 
 export default Form
