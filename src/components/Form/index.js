@@ -1,40 +1,29 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Link from '../Button'
-import { useHistory } from 'react-router-dom'
+// import { useHistory } from 'react-router-dom'
 import { Container, Label, Required, Note, Input, Dropdown } from './styles'
 import { dependencies } from '../../utils/dependencies'
+import PropTypes from 'prop-types'
 
-const Form = () => {
-  const history = useHistory()
+const Form = ({ handleSearch, setState, state }) => {
+  // const history = useHistory()
 
-  const [data, setData] = useState({
-    dependencia: '',
-    temporalidad: ''
-  })
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    if (data.dependencia === '') {
-      alert('Llene los campos obligatorios')
-    } else {
-      console.log('Enviando datos...' + data.dependencia + data.temporalidad)
-    }
-
-    history.push('/dashboard')
-  }
+  // const [data, setData] = useState({
+  //   dependencia: ''
+  //   // temporalidad: ''
+  // })
 
   const handleInputChange = (e) => {
-    setData({
-      ...data,
+    setState({
+      ...state,
       [e.target.name]: e.target.value
     })
   }
 
   const handleDropdownChange = (e) => {
-    console.log(e.target)
-    setData({
-      ...data,
-      temporalidad: e.target.value
+    setState({
+      ...state,
+      interval: e.target.value
     })
   }
 
@@ -44,7 +33,7 @@ const Form = () => {
         <Label>
           Dependencia <Required>*</Required>
           {/* <Input onChange={handleInputChange} type="text" name="dependencia"/> */}
-          <Input list="dependencias" onChange={handleInputChange} name="dependencia" />
+          <Input list="dependencias" onChange={handleInputChange} name="dependence" />
           <datalist id="dependencias">
             {
               dependencies.map(item => (
@@ -56,22 +45,26 @@ const Form = () => {
         <Label>
           Temporalidad
           <Dropdown onChange={handleDropdownChange}>
-            <option></option>
-            <option value="ultimo-mes" name="ultimo-mes">Último mes</option>
-            <option value="3-meses" name="3-meses">3 meses</option>
-            <option value="6-meses" name="6-meses">6 meses</option>
-            <option value="ultimo-anho" name="ultimo-anho">Último año</option>
-            <option value="2020" name="2020">2020</option>
-            <option value="2019" name="2019">2019</option>
+            {/* <option></option> */}
+            <option value="1" name="ultimo-mes">Último mes</option>
+            <option value="3" name="3-meses">3 meses</option>
+            <option value="6" name="6-meses">6 meses</option>
+            <option value="12" name="ultimo-anho">Último año</option>
           </Dropdown>
         </Label>
         <Note>* Campos obligatorios</Note>
       </Container>
-      <Link handleSubmit={handleSubmit}>
+      <Link handleSubmit={handleSearch}>
         Buscar
       </Link>
     </>
   )
+}
+
+Form.propTypes = {
+  handleSearch: PropTypes.func,
+  state: PropTypes.object,
+  setState: PropTypes.object
 }
 
 export default Form

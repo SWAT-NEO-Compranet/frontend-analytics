@@ -1,11 +1,11 @@
 import React from 'react'
 import { Layout, Header, Title, Description, Column, Logo, Illustration } from './styles'
-import Form from '../../components/Form'
 import illustration from '../../images/Illustration.svg'
 import logo from '../../images/logo.svg'
 import Footer from '../../components/Footer'
+import PropTypes from 'prop-types'
 
-const Home = () => {
+const Home = ({ children }) => {
   return (
     <Layout>
       <Header>
@@ -24,10 +24,20 @@ const Home = () => {
           <Illustration src={illustration} alt="illustration"/>
         </Column>
       </Header>
-      <Form />
+      { children }
       <Footer />
     </Layout>
   )
 }
+
+Home.propTypes = {
+  children: PropTypes.string
+}
+
+// LinkButton.propTypes = {
+//   children: PropTypes.string,
+//   // to: PropTypes.string,
+//   handleSubmit: PropTypes.func
+// }
 
 export default Home

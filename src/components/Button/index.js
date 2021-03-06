@@ -12,7 +12,7 @@ const LinkButton = ({ children, handleSubmit }) => {
 
 LinkButton.propTypes = {
   children: PropTypes.string,
-  to: PropTypes.string,
+  // to: PropTypes.string,
   handleSubmit: PropTypes.func
 }
 

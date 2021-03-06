@@ -41,7 +41,8 @@ export const CardLink = styled(Link)`
 `
 
 export const TitleCard = styled.h3`
-  font-size: 1em;
+  font-size: .75em;
+  font-weight: normal;
 `
 
 export const DescriptionCard = styled.p`
