@@ -6,20 +6,20 @@ import PropTypes from 'prop-types'
 // const cards = [1, 2, 3, 4, 5, 6, 7, 8]
 
 function CardDashboard ({ cards }) {
-  console.log(cards)
+  // console.log(cards?.contracts.data)
 
   return (
     <CardsWrapper>
       <Subtitle>Contratos</Subtitle>
       {
-        cards?.contracts.data.map(item => <Card key={item} />)
+        cards?.contracts.data.map(card => <Card key={card.id} cardsInfo={card} />)
       }
     </CardsWrapper>
   )
 }
 
 CardDashboard.propTypes = {
-  cards: PropTypes.object
+  cards: PropTypes.array
 }
 
 export default CardDashboard
