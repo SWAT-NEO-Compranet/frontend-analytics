@@ -19,6 +19,6 @@ export const CardsWrapper = styled.section`
 `
 
 export const Subtitle = styled.h4`
-  color: ${({ theme }) => theme.color.secondary};
+  color: ${({ theme }) => theme.color.primary};
   margin-bottom: .5em;
 `
