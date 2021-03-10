@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from '../../images/logo.svg'
+import logo from '../../images/logo1.svg'
 import { HeaderContainer, Logo, LogoImg } from './styles'
 
 function Header () {

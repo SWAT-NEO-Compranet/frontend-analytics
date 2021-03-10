@@ -61,6 +61,7 @@ export const DashboardContent = styled.main`
   width: 100vw;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 80px 1fr;
 
   @media (max-width: 768px) {
     grid-template-columns: repeat(3, 1fr);

@@ -2,8 +2,9 @@ import React, { useState } from 'react'
 import Header from '../../components/header'
 import Footer from '../../components/Footer'
 import arrow from '../../images/arrow.svg'
-import { Layout, Menu, DashboardContent, ToogleBar, ToogleButton, ToogleArrow, MenuForm, Print } from './styles'
-import { Label, Input, Dropdown } from '../../components/Form/styles'
+import { Layout, DashboardContent, ToogleBar, ToogleButton, ToogleArrow } from './styles'
+// MenuForm, Print Menu
+// import { Label, Input, Dropdown } from '../../components/Form/styles'
 import PropTypes from 'prop-types'
 
 const Dashboard = ({ children }) => {
@@ -17,7 +18,7 @@ const Dashboard = ({ children }) => {
     <>
       <Header />
       <Layout>
-        {
+        {/* {
           active
             ? <Menu showed>
             <MenuForm showed>
@@ -60,7 +61,7 @@ const Dashboard = ({ children }) => {
               </Label>
             </MenuForm>
           </Menu>
-        }
+        } */}
 
         <ToogleBar>
           <ToogleButton onClick={toogleMenu}>
