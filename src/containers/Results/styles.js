@@ -13,6 +13,7 @@ export const Logo = styled.img`
 export const ContractCard = styled.div`
   background: ${({ theme: { color } }) => color.gray};
   border-radius: 16px;
+  margin: 1em 0; 
   padding: 20px 30px;
 `
 
@@ -22,7 +23,7 @@ export const Description = styled.p`
 
 export const Title = styled.h1`
   color: ${({ theme: { color } }) => color.dark};
-  font-size: 1.5em;
+  font-size: 1.2em;
 `
 
 export const Subtitle = styled.h2`

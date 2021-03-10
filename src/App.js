@@ -35,8 +35,6 @@ function App () {
       })
     })
       .then(res => res.json())
-      // .then(data => setState({ ...state, search: data }))
-      // .then(data => console.log(data.dependence.name))
       .then(({ dependence }) => setState({ ...state, search: dependence }))
 
     history.push('/dashboard')
@@ -50,9 +48,7 @@ function App () {
               <Form handleSearch={handleSearch} setState={setState} state={state} />
             </Home>
           </Route>
-          <Route exact path="/results">
-            <Results />
-          </Route>
+          <Route exact path="/results/:id" component={Results} />
           <Route exact path="/dashboard">
             <Dashboard>
               <ChartDashboard state={state.search} />
