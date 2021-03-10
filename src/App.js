@@ -11,10 +11,13 @@ import Dashboard from './containers/Dashboard'
 import Results from './containers/Results'
 import ChartDashboard from './components/chartsDashboard'
 import CardDashboard from './components/cardsDashboard'
+import Loader from 'react-loader-spinner'
 import PropTypes from 'prop-types'
 
 function App () {
   const history = useHistory()
+
+  const [isLoading, setIsLoading] = useState(false)
 
   const [state, setState] = useState({
     dependence: null,
@@ -24,6 +27,8 @@ function App () {
 
   const handleSearch = (e) => {
     e.preventDefault()
+    setIsLoading(true)
+
     fetch('https://neo-analytics-backend.herokuapp.com/api/dependencies/details', {
       method: 'POST',
       headers: {
@@ -38,7 +43,7 @@ function App () {
       // .then(data => setState({ ...state, search: data }))
       // .then(data => console.log(data.dependence.name))
       .then(({ dependence }) => setState({ ...state, search: dependence }))
-
+    setIsLoading(false)
     history.push('/dashboard')
   }
 
@@ -48,6 +53,14 @@ function App () {
           <Route exact path="/">
             <Home>
               <Form handleSearch={handleSearch} setState={setState} state={state} />
+              { isLoading &&
+                <Loader className="Loader"
+                  type="Grid"
+                  color="#6900C6"
+                  height={100}
+                  width={100}
+                  />
+              }
             </Home>
           </Route>
           <Route exact path="/results">
