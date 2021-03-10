@@ -1,15 +1,16 @@
 import React from 'react'
-import { Modal, ModalWrapper, ExitButton } from './styles'
+import { Modal, ModalWrapper, ExitButtonTop, ExitButtonBottom } from './styles'
 import PropTypes from 'prop-types'
 
 function ModalResult ({ modal, setModal, children }) {
   return (
     <Modal>
         <ModalWrapper>
-          <ExitButton onClick={() => setModal(!modal)}>
+          <ExitButtonTop onClick={() => setModal(!modal)}>
             X
-          </ExitButton>
+          </ExitButtonTop>
           {children}
+          <ExitButtonBottom onClick={() => setModal(!modal)}>Cerrar</ExitButtonBottom>
         </ModalWrapper>
     </Modal>
   )

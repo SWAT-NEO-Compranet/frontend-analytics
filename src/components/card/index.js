@@ -2,13 +2,13 @@ import React, { useState } from 'react'
 import IconItem from '../iconItem'
 import amount from '../../images/amount.svg'
 import companyIcon from '../../images/company.svg'
-// import UC from '../../images/person.svg'
+import folder from '../../images/folder.svg'
 import calendar from '../../images/date.svg'
 import arrow from '../../images/arrow.svg'
 import { CardWrapper, TitleCard, Amount, IconsCard, AmountNumber, AmountImage, CardInfo, CardLink } from './styles'
 import PropTypes from 'prop-types'
 import ModalResult from '../ModalResult'
-import { ContractCard, Title, FooterCard, Subtitle, InfoContainer, InfoCell, Campo, Valor } from '../../containers/Results/styles'
+import { ContractCard, Title, FooterCard, Subtitle, InfoContainer, InfoCell, Campo, Valor, Dependece, LinkOriginal } from '../../containers/Results/styles'
 
 function Card ({ cardsInfo }) {
   console.log(cardsInfo)
@@ -21,9 +21,7 @@ function Card ({ cardsInfo }) {
     <>
       <CardWrapper>
         <CardInfo>
-          <div>
-            <TitleCard>{resume}</TitleCard>
-          </div>
+          <TitleCard>{resume}</TitleCard>
           <Amount>
             <AmountImage src={amount} alt="amount"/>
             <AmountNumber>{cardsInfo.contract_amount} {cardsInfo.currency}</AmountNumber>
@@ -39,20 +37,24 @@ function Card ({ cardsInfo }) {
         </CardLink>
         {
           modal && <ModalResult modal={modal} setModal={setModal}>
-            <p>{cardsInfo.institution}</p>
+            <Dependece>{cardsInfo.institution}</Dependece>
             <ContractCard>
               <Title>{description}</Title>
+              <Amount>
+                <AmountImage src={amount} alt="amount"/>
+                <AmountNumber>{cardsInfo.contract_amount} {cardsInfo.currency}</AmountNumber>
+              </Amount>
             </ContractCard>
-            <p>{cardsInfo.contract_amount} {cardsInfo.currency}</p>
             <FooterCard>
-              <IconItem itemIcon={companyIcon} itemData="Empresa" />
-              <IconItem itemIcon={amount} itemData="5,000" />
-              <IconItem itemIcon={amount} itemData="Enlace" />
+              <IconItem itemIcon={companyIcon} itemData={cardsInfo.provider} />
+              <LinkOriginal href={cardsInfo.address_ad} target='_blank' rel='noreferrer'>
+                <IconItem itemIcon={folder} itemData="Contrato original" />
+              </LinkOriginal>
             </FooterCard>
             <Subtitle>Información</Subtitle>
             <InfoContainer>
               <InfoCell>
-                <Campo>Provedor</Campo>
+                <Campo>Proovedor</Campo>
                 <Valor>{cardsInfo.provider}</Valor>
               </InfoCell>
               <InfoCell>

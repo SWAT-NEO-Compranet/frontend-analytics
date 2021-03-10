@@ -7,7 +7,7 @@ export const CardWrapper = styled.div`
   box-shadow: ${({ theme }) => theme.shadow};
   border-top-right-radius: 1em;
   border-bottom-right-radius: 1em;
-  border-left: 4px solid ${({ theme: { color } }) => color.secondary};
+  border-left: 6px solid ${({ theme: { color } }) => color.light};
   min-height: 225px;
   //height: auto;
   margin-bottom: 1em;
@@ -41,15 +41,9 @@ export const CardLink = styled.div`
 `
 
 export const TitleCard = styled.h3`
-  font-size: .75em;
-  font-weight: normal;
-`
-
-export const DescriptionCard = styled.p`
-  font-size: .75em;
-  /* white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis; */
+  font-size: .8em;
+  font-weight: bold;
+  color: ${({ theme: { color } }) => color.primary};
 `
 
 export const Amount = styled.div`
@@ -59,17 +53,14 @@ export const Amount = styled.div`
 `
 
 export const AmountImage = styled.img`
-  width: 1.8em;
+  width: 1.5em;
 `
 
 export const AmountNumber = styled.span`
-  //background: rgba(105, 0, 198, 0.5);
-  //color: ${({ theme: { color } }) => color.light};
-  color: ${({ theme: { color } }) => color.primary};
   font-weight: bold;
-  font-size: .9em;
+  font-size: .75em;
   padding: 0 .8em;
-  
+  color: ${({ theme: { color } }) => color.dark};
 `
 
 export const IconsCard = styled.div`
