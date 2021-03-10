@@ -14,15 +14,24 @@ function ChartDashboard ({ state }) {
       <Dependence>
         <Icon src={gov} alt="Dependencia" />
         <Info>
-          <Title>{state?.name}</Title>
-          <Detail>{state?.acronyms}</Detail>
+          {
+            state
+              ? <>
+                  <Title>{state?.name}</Title>
+                  <Detail>{state?.acronyms}</Detail>
+                </>
+              : <Title>Dependencia no encontrada</Title>
+          }
+
         </Info>
       </Dependence>
       <NumberContracts>
         <Icon src={folder} alt="Contratos encontrados" />
         <Info>
           <Detail>Contratos encontrados</Detail>
-          <Title>{state?.contracts.total}</Title>
+          {
+            state ? <Title>{state?.contracts.total}</Title> : <Title>Sin contratos</Title>
+          }
         </Info>
       </NumberContracts>
 

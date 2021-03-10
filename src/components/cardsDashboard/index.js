@@ -12,7 +12,9 @@ function CardDashboard ({ cards }) {
     <CardsWrapper>
       <Subtitle>Contratos</Subtitle>
       {
-        cards?.contracts.data.map(card => <Card key={card.id} cardsInfo={card} />)
+        cards?.contracts.data !== 0
+          ? cards?.contracts.data.map(card => <Card key={card.id} cardsInfo={card} />)
+          : <span>Sin contratos</span>
       }
     </CardsWrapper>
   )
