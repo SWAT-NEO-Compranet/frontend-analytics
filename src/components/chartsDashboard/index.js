@@ -46,7 +46,7 @@ function ChartDashboard ({ state }) {
         : <MainChart stats={state.stats} />
       }
 
-      <SecondChart />
+      <SecondChart stats={state?.contact_types} />
       <ThirdChart />
 
     </ChartsWrapper>

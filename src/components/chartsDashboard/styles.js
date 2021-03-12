@@ -5,7 +5,7 @@ export const ChartsWrapper = styled.section`
   margin: 0 2em;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: 12% 500px 250px;
+  grid-template-rows: 12% 450px 250px;
   grid-gap: 1em;
 
   @media (max-width: 426px) {

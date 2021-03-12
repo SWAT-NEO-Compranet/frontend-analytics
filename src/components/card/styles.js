@@ -14,6 +14,8 @@ export const CardWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   //scroll-snap-align: start;
+  width: 75%;
+  justify-self: center;
 `
 
 export const CardInfo = styled.div`

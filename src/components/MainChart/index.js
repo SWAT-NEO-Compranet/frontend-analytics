@@ -16,12 +16,27 @@ const color = {
 }
 
 function MainChart ({ stats }) {
-  console.log(stats)
+  // console.log(stats)
+  // console.log(stats.map(stat => stat.total))
+  const amount = stats[0].total
+  // console.log(amount)
+  const transform = { style: 'currency', currency: 'USD' }
+  const formatNum = new Intl.NumberFormat(transform)
+  console.log(formatNum.format(amount))
+
+  const transformStats = stats.map(stat => (
+    {
+      total: formatNum.format(stat.total),
+      month: stat.month,
+      contracts: stat.contracts
+    }
+  ))
+  // console.log(transformStats)
 
   return (
     <Container>
-      <ResponsiveContainer width="100%" height="40%">
-        <AreaChart data={stats} syncId="graph1">
+      {/* <ResponsiveContainer width="100%" height="40%">
+        <AreaChart data={transformStats} syncId="graph1">
           <XAxis dataKey='month' />
           <YAxis />
           <Tooltip />
@@ -29,11 +44,19 @@ function MainChart ({ stats }) {
         </AreaChart>
       </ResponsiveContainer>
       <ResponsiveContainer width="100%" height="50%">
-        <AreaChart data={stats} syncId="graph1">
+        <AreaChart data={transformStats} syncId="graph1">
           <XAxis dataKey='month' />
           <YAxis />
           <Tooltip />
           <Area type='monotone' dataKey='total' fill={color.red} stackId='1' />
+        </AreaChart>
+      </ResponsiveContainer> */}
+      <ResponsiveContainer>
+        <AreaChart data={transformStats}>
+          <XAxis dataKey='month' />
+          <YAxis />
+          <Tooltip />
+          <Area type='monotone' dataKey='contracts' fill={color.red} />
         </AreaChart>
       </ResponsiveContainer>
     </Container>

@@ -15,6 +15,10 @@ function Card ({ cardsInfo }) {
   const description = cardsInfo.contract_title
   const resume = description.substring(0, 140) + '...'
 
+  const transform = { style: 'currency', currency: 'USD' }
+  const formatNum = new Intl.NumberFormat('en-US', transform)
+  const transformAmount = formatNum.format(cardsInfo.contract_amount)
+
   const [modal, setModal] = useState(false)
 
   return (
@@ -24,7 +28,7 @@ function Card ({ cardsInfo }) {
           <TitleCard>{resume}</TitleCard>
           <Amount>
             <AmountImage src={amount} alt="amount"/>
-            <AmountNumber>{cardsInfo.contract_amount} {cardsInfo.currency}</AmountNumber>
+            <AmountNumber>{transformAmount} {cardsInfo.currency}</AmountNumber>
           </Amount>
           <IconsCard>
             <IconItem itemIcon={companyIcon} itemData={cardsInfo.provider} />

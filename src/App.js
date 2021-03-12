@@ -11,7 +11,7 @@ import Dashboard from './containers/Dashboard'
 import Results from './containers/Results'
 import ChartDashboard from './components/chartsDashboard'
 import CardDashboard from './components/cardsDashboard'
-import Result from './components/Result'
+// import Result from './components/Result'
 import Loader from 'react-loader-spinner'
 import PropTypes from 'prop-types'
 
@@ -65,7 +65,7 @@ function App () {
           <Route exact path="/results/:id" component={Results} />
           <Route exact path="/dashboard">
             <Dashboard>
-              <Result dependence={state.dependence} interval={state.interval} />
+              {/* <Result dependence={state.dependence} interval={state.interval} /> */}
               <ChartDashboard state={state.search} />
               <CardDashboard cards={state.search} />
             </Dashboard>
