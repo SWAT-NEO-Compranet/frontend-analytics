@@ -11,7 +11,7 @@ import ModalResult from '../ModalResult'
 import { ContractCard, Title, FooterCard, Subtitle, InfoContainer, InfoCell, Campo, Valor, Dependece, LinkOriginal } from '../../containers/Results/styles'
 
 function Card ({ cardsInfo }) {
-  console.log(cardsInfo)
+  // console.log(cardsInfo)
   const description = cardsInfo.contract_title
   const resume = description.substring(0, 140) + '...'
 
