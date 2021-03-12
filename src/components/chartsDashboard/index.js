@@ -6,6 +6,7 @@ import SecondChart from '../SecondChart'
 import ThirdChart from '../ThirdChart'
 import { ChartsWrapper, Dependence, Icon, Info, Title, Detail, NumberContracts } from './styles'
 import PropTypes from 'prop-types'
+import Loader from 'react-loader-spinner'
 
 function ChartDashboard ({ state }) {
   // console.log(state)
@@ -20,7 +21,7 @@ function ChartDashboard ({ state }) {
                   <Title>{state?.name}</Title>
                   <Detail>{state?.acronyms}</Detail>
                 </>
-              : <Title>Dependencia no encontrada</Title>
+              : <Title>Buscando dependencia</Title>
           }
 
         </Info>
@@ -35,7 +36,16 @@ function ChartDashboard ({ state }) {
         </Info>
       </NumberContracts>
 
-      <MainChart />
+      { state == null
+        ? <Loader className="Loader"
+          type="Grid"
+          color="#6900C6"
+          height={100}
+          width={100}
+          />
+        : <MainChart stats={state.stats} />
+      }
+
       <SecondChart />
       <ThirdChart />
 
