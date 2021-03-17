@@ -10,22 +10,15 @@ import PropTypes from 'prop-types'
 // ]
 
 function SecondChart ({ stats }) {
-  console.log(stats)
-  const transformStats = stats.map(stat => (
-    {
-      Contratos: stat.contracts,
-      Tipo: stat.procedure
-    }
-  ))
   return (
     <Container>
       <ResponsiveContainer width="100%" height="100%" >
-        <BarChart data={transformStats}>
+        <BarChart data={stats}>
         <CartesianGrid stroke="#ccc" />
 
         <Tooltip cursor={false} />
           <Bar
-            dataKey="Contratos"
+            dataKey="contracts"
             fill="#20003D"
             shape="round"
             barSize={40}
@@ -33,7 +26,7 @@ function SecondChart ({ stats }) {
           />
 
           <XAxis
-            dataKey="Tipo"
+            dataKey="procedure"
             dy={10}
             height={60}
             type="category"
