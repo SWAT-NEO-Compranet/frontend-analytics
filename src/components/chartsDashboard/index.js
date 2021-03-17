@@ -3,7 +3,7 @@ import gov from '../../images/gov.svg'
 import folder from '../../images/folder.svg'
 import MainChart from '../MainChart'
 import SecondChart from '../SecondChart'
-import ThirdChart from '../ThirdChart'
+// import ThirdChart from '../ThirdChart'
 import { ChartsWrapper, Dependence, Icon, Info, Title, Detail, NumberContracts } from './styles'
 import PropTypes from 'prop-types'
 import Loader from 'react-loader-spinner'
@@ -47,7 +47,7 @@ function ChartDashboard ({ state }) {
       }
 
       <SecondChart stats={state?.contact_types} />
-      <ThirdChart />
+      {/* <ThirdChart /> */}
 
     </ChartsWrapper>
   )

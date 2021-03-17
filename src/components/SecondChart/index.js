@@ -1,5 +1,5 @@
 import React from 'react'
-import { ResponsiveContainer, BarChart, XAxis, Bar, Label, Tooltip, YAxis } from 'recharts'
+import { ResponsiveContainer, BarChart, XAxis, Bar, Label, Tooltip, YAxis, CartesianGrid } from 'recharts'
 import { Container } from './styles'
 import PropTypes from 'prop-types'
 
@@ -10,22 +10,30 @@ import PropTypes from 'prop-types'
 // ]
 
 function SecondChart ({ stats }) {
-  // console.log(stats)
+  console.log(stats)
+  const transformStats = stats.map(stat => (
+    {
+      Contratos: stat.contracts,
+      Tipo: stat.procedure
+    }
+  ))
   return (
     <Container>
       <ResponsiveContainer width="100%" height="100%" >
-        <BarChart data={stats}>
+        <BarChart data={transformStats}>
+        <CartesianGrid stroke="#ccc" />
+
+        <Tooltip cursor={false} />
           <Bar
-            dataKey="contracts"
+            dataKey="Contratos"
             fill="#20003D"
             shape="round"
             barSize={40}
             radius={[10, 10, 0, 0]}
           />
-          <Tooltip />
-          {/* <CartesianGrid stroke="#ccc" /> */}
+
           <XAxis
-            dataKey="procedure"
+            dataKey="Tipo"
             dy={10}
             height={60}
             type="category"
@@ -42,6 +50,7 @@ function SecondChart ({ stats }) {
           </XAxis>
           <YAxis />
         </BarChart>
+
       </ResponsiveContainer>
 
     </Container>

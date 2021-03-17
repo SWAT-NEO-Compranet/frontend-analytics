@@ -1,5 +1,5 @@
 import React from 'react'
-import { ResponsiveContainer, AreaChart, Area, XAxis, YAxis, Tooltip } from 'recharts'
+import { ResponsiveContainer, AreaChart, Area, XAxis, YAxis, Tooltip, CartesianGrid } from 'recharts'
 import { Container } from './styles'
 import PropTypes from 'prop-types'
 
@@ -18,17 +18,17 @@ const color = {
 function MainChart ({ stats }) {
   // console.log(stats)
   // console.log(stats.map(stat => stat.total))
-  const amount = stats[0].total
+  // const amount = stats[0].total
   // console.log(amount)
-  const transform = { style: 'currency', currency: 'USD' }
-  const formatNum = new Intl.NumberFormat(transform)
-  console.log(formatNum.format(amount))
+  // const transform = { style: 'currency', currency: 'USD' }
+  // const formatNum = new Intl.NumberFormat(transform)
+  // console.log(formatNum.format(amount))
 
   const transformStats = stats.map(stat => (
     {
-      total: formatNum.format(stat.total),
+      Millones: parseInt(stat.total / 1000000),
       month: stat.month,
-      contracts: stat.contracts
+      Contratos: stat.contracts
     }
   ))
   // console.log(transformStats)
@@ -52,11 +52,17 @@ function MainChart ({ stats }) {
         </AreaChart>
       </ResponsiveContainer> */}
       <ResponsiveContainer>
-        <AreaChart data={transformStats}>
-          <XAxis dataKey='month' />
+        <AreaChart data={transformStats} margin={{ bottom: 50, top: 20, left: 20 }}>
+          <XAxis dataKey='month' angle={-30} textAnchor={'end'}
+            style={{
+              fontSize: '0.7em',
+              fontFamily: 'poppins'
+            }} />
           <YAxis />
+          <CartesianGrid stroke="#ccc" />
           <Tooltip />
-          <Area type='monotone' dataKey='contracts' fill={color.red} />
+          <Area type='monotone' dataKey='Millones' fill={color.green} />
+          <Area type='monotone' dataKey='Contratos' fill={color.purple} />
         </AreaChart>
       </ResponsiveContainer>
     </Container>
