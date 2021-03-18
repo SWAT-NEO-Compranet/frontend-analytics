@@ -1,18 +1,17 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Header from '../../components/header'
 import Footer from '../../components/Footer'
-import arrow from '../../images/arrow.svg'
-import { Layout, DashboardContent, ToogleBar, ToogleButton, ToogleArrow } from './styles'
+import { Layout, DashboardContent } from './styles'
 // MenuForm, Print Menu
 // import { Label, Input, Dropdown } from '../../components/Form/styles'
 import PropTypes from 'prop-types'
 
 const Dashboard = ({ children }) => {
-  const [active, setActive] = useState(true)
+  // const [active, setActive] = useState(true)
 
-  const toogleMenu = () => {
-    setActive(!active)
-  }
+  // const toogleMenu = () => {
+  //   setActive(!active)
+  // }
 
   return (
     <>
@@ -63,13 +62,13 @@ const Dashboard = ({ children }) => {
           </Menu>
         } */}
 
-        <ToogleBar>
+        {/* <ToogleBar>
           <ToogleButton onClick={toogleMenu}>
             {active
               ? <ToogleArrow src={arrow} showed />
               : <ToogleArrow src={arrow} />}
           </ToogleButton>
-        </ToogleBar>
+        </ToogleBar> */}
         <DashboardContent>
           {children}
         </DashboardContent>

@@ -24,7 +24,7 @@ function MainChart ({ stats }) {
   // const formatNum = new Intl.NumberFormat(transform)
   // console.log(formatNum.format(amount))
 
-  const transformStats = stats.map(stat => (
+  const transformStats = stats?.map(stat => (
     {
       Millones: parseInt(stat.total / 1000000),
       month: stat.month,

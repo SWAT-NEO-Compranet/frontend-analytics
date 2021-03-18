@@ -2,11 +2,12 @@ import styled from 'styled-components'
 
 export const CardsWrapper = styled.section`
   grid-column: 4 / 6;
-  display: grid;
-  margin-right: 1em;
+  // display: grid;
   max-height: 90%;
   overflow: scroll;
-  // margin-left: 90px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   @media (max-width: 768px) {
     grid-column: 1 / 4;
