@@ -12,23 +12,22 @@ import Results from './containers/Results'
 import ChartDashboard from './components/chartsDashboard'
 import CardDashboard from './components/cardsDashboard'
 // import Result from './components/Result'
-import Loader from 'react-loader-spinner'
 import PropTypes from 'prop-types'
 
 function App () {
   const history = useHistory()
 
-  const [isLoading, setIsLoading] = useState(false)
-
   const [state, setState] = useState({
     dependence: null,
     interval: null,
-    search: null
+    search: null,
+    loading: true
   })
 
   const handleSearch = (e) => {
     e.preventDefault()
-    setIsLoading(true)
+
+    setState({ loading: true })
 
     fetch('https://neo-analytics-backend.herokuapp.com/api/dependencies/details', {
       method: 'POST',
@@ -41,8 +40,7 @@ function App () {
       })
     })
       .then(res => res.json())
-      .then(({ dependence }) => setState({ ...state, search: dependence }))
-    setIsLoading(false)
+      .then(({ dependence }) => setState({ ...state, search: dependence, loading: false }))
     history.push('/dashboard')
   }
 
@@ -52,22 +50,14 @@ function App () {
           <Route exact path="/">
             <Home>
               <Form handleSearch={handleSearch} setState={setState} state={state} />
-              { isLoading &&
-                <Loader className="Loader"
-                  type="Grid"
-                  color="#6900C6"
-                  height={100}
-                  width={100}
-                  />
-              }
             </Home>
           </Route>
           <Route exact path="/results/:id" component={Results} />
           <Route exact path="/dashboard">
             <Dashboard>
               {/* <Result dependence={state.dependence} interval={state.interval} /> */}
-              <ChartDashboard state={state.search} />
-              <CardDashboard cards={state.search} />
+              <ChartDashboard state={state} />
+              <CardDashboard cards={state.search} loading={state.loading} />
             </Dashboard>
           </Route>
 

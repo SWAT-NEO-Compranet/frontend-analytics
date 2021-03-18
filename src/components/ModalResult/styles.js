@@ -2,7 +2,8 @@ import styled from 'styled-components'
 
 export const Modal = styled.div`
   // background: rgba(255, 255, 255, 0.6);
-  background: rgba(32, 0, 61, 0.6);
+  background: rgba(0, 0, 0, 0.2);
+  box-shadow: ${({ theme }) => theme.shadow};
   position: absolute;
   top: 0;
   bottom: 0;
