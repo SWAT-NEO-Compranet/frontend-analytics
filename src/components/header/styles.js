@@ -8,7 +8,8 @@ export const HeaderContainer = styled.header`
   align-items: center;
   padding-left: 4.5em;
   background: ${({ theme: { color } }) => color.gray};
-  margin-bottom: 2em;
+  // margin-bottom: 2em;
+  background: white;
 
   @media print{
     display: none;

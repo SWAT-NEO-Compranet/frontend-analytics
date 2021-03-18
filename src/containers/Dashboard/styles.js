@@ -1,8 +1,10 @@
 import styled from 'styled-components'
 
 export const Layout = styled.section`
+  background: ${({ theme: { color } }) => color.gray};
   display: flex;
   height: 115vh;
+  padding-top: 2em;
 
   @media (max-width: 768px) {
     height: 173vh;

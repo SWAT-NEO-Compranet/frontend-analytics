@@ -2,7 +2,7 @@ import styled from 'styled-components'
 // import { Link } from 'react-router-dom'
 
 export const CardWrapper = styled.div`
-  background: ${({ theme: { color } }) => color.gray};
+  background: white;
   color: ${({ theme: { color } }) => color.dark};
   box-shadow: ${({ theme }) => theme.shadow};
   border-top-right-radius: 1em;
@@ -10,7 +10,7 @@ export const CardWrapper = styled.div`
   border-left: 6px solid ${({ theme: { color } }) => color.light};
   min-height: 225px;
   //height: auto;
-  margin-bottom: 1em;
+  margin: 0 auto 1em;
   display: flex;
   justify-content: space-between;
   //scroll-snap-align: start;

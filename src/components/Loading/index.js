@@ -35,7 +35,7 @@ export const Loading = styled.div`
 export const LoadingCard = styled.div`
   width: 75%;
   min-height: 225px;
-  margin-bottom: 1em;
+  margin: 0 auto 1em;
   border-radius: 1em;
   position: relative;
   overflow: hidden;
