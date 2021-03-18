@@ -5,7 +5,7 @@ export const ChartsWrapper = styled.section`
   margin: 0 2em;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: 12% 450px 250px;
+  grid-template-rows: 12% 440px 295px;
   grid-gap: 1em;
 
   @media (max-width: 426px) {
@@ -15,7 +15,7 @@ export const ChartsWrapper = styled.section`
 `
 
 export const Dependence = styled.div`
-  background: ${({ theme: { color } }) => color.gray};
+  background: white;
   max-height: 120px;
   border-radius: 1em;
   grid-column: 1 / 4;

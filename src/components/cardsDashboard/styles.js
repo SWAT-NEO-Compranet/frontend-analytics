@@ -3,11 +3,11 @@ import styled from 'styled-components'
 export const CardsWrapper = styled.section`
   grid-column: 4 / 6;
   // display: grid;
-  max-height: 90%;
-  overflow: scroll;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  // max-height: 90%;
+  // overflow: scroll;
+  // display: flex;
+  // flex-direction: column;
+  // align-items: center;
 
   @media (max-width: 768px) {
     grid-column: 1 / 4;
@@ -19,6 +19,13 @@ export const CardsWrapper = styled.section`
     overflow: initial;
     page-break-after: always;
   }
+`
+
+export const CardsScroll = styled.div`
+  // background: salmon;
+  padding-top: 1em;
+  max-height: 900px;
+  overflow: scroll;
 `
 
 export const Subtitle = styled.h4`
