@@ -3,7 +3,7 @@ import { Layout, Header, Title, Description, Column, Logo, Illustration } from '
 import illustration from '../../images/Illustration.svg'
 import logo from '../../images/logo.svg'
 // import Footer from '../../components/Footer'
-import { FooterWrapper } from '../../components/Footer/styles'
+// import { FooterWrapper } from '../../components/Footer/styles'
 import PropTypes from 'prop-types'
 
 const Home = ({ children }) => {
@@ -26,7 +26,7 @@ const Home = ({ children }) => {
         </Column>
       </Header>
       { children }
-      <FooterWrapper absolute >Footer</FooterWrapper>
+      {/* <FooterWrapper absolute >Footer</FooterWrapper> */}
     </Layout>
   )
 }
