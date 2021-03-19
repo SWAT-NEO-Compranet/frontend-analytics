@@ -1,18 +1,17 @@
 import styled from 'styled-components'
 
 export const Container = styled.form`
-  border-radius: 16px;
-  background: ${({ theme: { color } }) => color.gray}; 
-  margin: 0 auto;
+  border-radius: 1em;
+  background: white;
+  margin: 3em auto;
   padding: 3em 3em 1em;
-  width: 60%;
+  max-width: 500px;
   min-height: auto;
   box-shadow: ${({ theme }) => theme.shadow};
-  //position: relative;
-  
+
   @media(max-width: 767px){
     padding: 20px 20px 20px;
-    width: initial;
+    // width: initial;
   }
   @media(max-width: 1023px){
     width: 90%

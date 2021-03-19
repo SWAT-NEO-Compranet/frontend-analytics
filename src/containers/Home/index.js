@@ -2,7 +2,8 @@ import React from 'react'
 import { Layout, Header, Title, Description, Column, Logo, Illustration } from './styles'
 import illustration from '../../images/Illustration.svg'
 import logo from '../../images/logo.svg'
-import Footer from '../../components/Footer'
+// import Footer from '../../components/Footer'
+import { FooterWrapper } from '../../components/Footer/styles'
 import PropTypes from 'prop-types'
 
 const Home = ({ children }) => {
@@ -25,7 +26,7 @@ const Home = ({ children }) => {
         </Column>
       </Header>
       { children }
-      <Footer />
+      <FooterWrapper absolute >Footer</FooterWrapper>
     </Layout>
   )
 }

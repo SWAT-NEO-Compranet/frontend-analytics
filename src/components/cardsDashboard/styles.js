@@ -12,7 +12,7 @@ export const CardsWrapper = styled.section`
   @media (max-width: 768px) {
     grid-column: 1 / 4;
     grid-row: 2;
-    margin: 0 2em;
+    margin-bottom: 3em;
   }
 
   @media print{
@@ -26,6 +26,10 @@ export const CardsScroll = styled.div`
   padding-top: 1em;
   max-height: 900px;
   overflow: scroll;
+
+  @media (max-width: 768px) {
+    max-height: 465px;
+  }
 `
 
 export const Subtitle = styled.h4`
