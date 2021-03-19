@@ -11,6 +11,10 @@ export const Link = styled(LinkRouter)`
   color: ${({ theme: { color } }) => color.gray};
   font-weight: bold;
   text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 125px;
 `
 
 export const Button = styled.button`

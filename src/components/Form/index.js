@@ -46,7 +46,6 @@ const Form = ({ handleSearch, setState, state }) => {
           Temporalidad
           <Dropdown onChange={handleDropdownChange}>
             {/* <option></option> */}
-            <option value="1" name="ultimo-mes">Último mes</option>
             <option value="3" name="3-meses">3 meses</option>
             <option value="6" name="6-meses">6 meses</option>
             <option value="12" name="ultimo-anho">Último año</option>

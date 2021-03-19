@@ -2,16 +2,16 @@ import styled from 'styled-components'
 
 export const Layout = styled.section`
   background: ${({ theme: { color } }) => color.gray};
-  display: flex;
-  height: 115vh;
+  // display: flex;
+  min-height: 100vh;
   padding-top: 2em;
 
   @media (max-width: 768px) {
-    height: 173vh;
+    // min-height: 173vh;
   }
 
   @media (max-width: 426px) {
-    height: 205vh;
+    // min-height: 205vh;
   }
 `
 
@@ -72,7 +72,7 @@ export const DashboardContent = styled.main`
   }
 
   @media (max-width: 426px) {
-    grid-template-rows: 1200px 500px;
+    grid-template-rows: 890px 500px;
   }
 `
 

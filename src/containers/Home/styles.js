@@ -1,17 +1,17 @@
 import styled from 'styled-components'
 
 export const Layout = styled.section`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100vh;
+  min-height: 100vh;
+  background: ${({ theme: { color } }) => color.gray};;
+  position: relative;
+  padding: 3em 0 0;
 `
 
 export const Header = styled.header`
   background: ${({ theme: { color } }) => color.primary};
   padding: 40px;
   width: 70%;
-  margin: 60px auto 0;
+  margin: 0 auto 4em;
   border-radius: 16px;
   display: flex;
   max-height: 240px;
