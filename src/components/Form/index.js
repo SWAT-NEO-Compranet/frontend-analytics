@@ -33,7 +33,12 @@ const Form = ({ handleSearch, setState, state }) => {
         <Label>
           Dependencia <Required>*</Required>
           {/* <Input onChange={handleInputChange} type="text" name="dependencia"/> */}
-          <Input list="dependencias" onChange={handleInputChange} name="dependence" />
+          <Input
+            list="dependencias"
+            onChange={handleInputChange}
+            name="dependence"
+            placeholder="Escoja una dependencia"
+          />
           <datalist id="dependencias">
             {
               dependencies.map(item => (

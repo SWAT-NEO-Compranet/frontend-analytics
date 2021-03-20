@@ -3,7 +3,8 @@ import {
   Switch,
   Route,
   withRouter,
-  useHistory
+  useHistory,
+  Redirect
 } from 'react-router-dom'
 import Home from './containers/Home'
 import Form from './components/Form'
@@ -27,7 +28,7 @@ function App () {
   const handleSearch = (e) => {
     e.preventDefault()
 
-    setState({ loading: true })
+    setState({ ...state, loading: true })
 
     fetch('https://neo-analytics-backend.herokuapp.com/api/dependencies/details', {
       method: 'POST',
@@ -41,6 +42,7 @@ function App () {
     })
       .then(res => res.json())
       .then(({ dependence }) => setState({ ...state, search: dependence, loading: false }))
+      .catch(e => console.error(e))
     history.push('/dashboard')
   }
 
@@ -53,13 +55,16 @@ function App () {
             </Home>
           </Route>
           <Route exact path="/results/:id" component={Results} />
-          <Route exact path="/dashboard">
-            <Dashboard>
-              {/* <Result dependence={state.dependence} interval={state.interval} /> */}
-              <ChartDashboard state={state} />
-              <CardDashboard cards={state.search} loading={state.loading} />
-            </Dashboard>
-          </Route>
+          {
+            (state.dependence !== null)
+              ? <Route exact path="/dashboard">
+                  <Dashboard setState={setState} state={state}>
+                    <ChartDashboard state={state} />
+                    <CardDashboard cards={state.search} loading={state.loading} />
+                  </Dashboard>
+                </Route>
+              : <Redirect to="/" />
+          }
 
       </Switch>
 
