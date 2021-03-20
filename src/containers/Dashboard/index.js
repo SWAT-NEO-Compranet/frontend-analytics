@@ -6,7 +6,7 @@ import { Layout, DashboardContent } from './styles'
 // import { Label, Input, Dropdown } from '../../components/Form/styles'
 import PropTypes from 'prop-types'
 
-const Dashboard = ({ children }) => {
+const Dashboard = ({ children, setState, state }) => {
   // const [active, setActive] = useState(true)
 
   // const toogleMenu = () => {
@@ -15,7 +15,7 @@ const Dashboard = ({ children }) => {
 
   return (
     <>
-      <Header />
+      <Header setState={setState} state={state}/>
       <Layout>
         <DashboardContent>
           {children}
@@ -27,7 +27,9 @@ const Dashboard = ({ children }) => {
 }
 
 Dashboard.propTypes = {
-  children: PropTypes.string
+  children: PropTypes.string,
+  state: PropTypes.object,
+  setState: PropTypes.func
 }
 
 export default Dashboard
