@@ -2,7 +2,8 @@ import React from 'react'
 import Link from '../Button'
 // import { useHistory } from 'react-router-dom'
 import { Container, Label, Required, Note, Input, Dropdown } from './styles'
-import { dependencies } from '../../utils/dependencies'
+// import { dependencies } from '../../utils/dependencies'
+import { acronysm } from '../../utils/acronysm'
 import PropTypes from 'prop-types'
 
 const Form = ({ handleSearch, setState, state }) => {
@@ -41,7 +42,7 @@ const Form = ({ handleSearch, setState, state }) => {
           />
           <datalist id="dependencias">
             {
-              dependencies.map(item => (
+              acronysm.map(item => (
                 <option value={item} key={item}></option>
               ))
             }
