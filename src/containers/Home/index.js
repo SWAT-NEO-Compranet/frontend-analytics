@@ -1,32 +1,24 @@
 import React from 'react'
-import { Layout, Header, Title, Description, Column, Logo, Illustration } from './styles'
-import illustration from '../../images/Illustration.svg'
+import { Layout, Hero, Title, Description, Logo, Info, ImageBackground, Image, Gradient } from './styles'
+import photo from '../../images/file.png'
 import logo from '../../images/logo.svg'
-// import Footer from '../../components/Footer'
-// import { FooterWrapper } from '../../components/Footer/styles'
 import PropTypes from 'prop-types'
 
 const Home = ({ children }) => {
   return (
     <Layout>
-      <Header>
-        <Column>
-          <Logo src={logo} alt="logo"/>
-          <Title>
-          Bienvenido a Analytics
-          </Title>
-          <Description>
-            Busca fácilmente contratos federales y estatales del gobierno de México y sus dependencias.
-            <br/>
-            Personaliza tu búsqueda y encuentra los archivos públicos.
-          </Description>
-        </Column>
-        <Column>
-          <Illustration src={illustration} alt="illustration"/>
-        </Column>
-      </Header>
-      { children }
-      {/* <FooterWrapper absolute >Footer</FooterWrapper> */}
+      <Logo><img src={logo} alt="Analitycs logo"/></Logo>
+      <Hero>
+        <Info>
+          <Title>Busca contratos públicos de las dependencias del gobierno mexicano.</Title>
+          <Description>Busca fácilmente</Description>
+          { children }
+        </Info>
+        <ImageBackground>
+          <Gradient></Gradient>
+          <Image src={photo} alt="Fotografía de documentos"/>
+        </ImageBackground>
+      </Hero>
     </Layout>
   )
 }
@@ -34,11 +26,5 @@ const Home = ({ children }) => {
 Home.propTypes = {
   children: PropTypes.string
 }
-
-// LinkButton.propTypes = {
-//   children: PropTypes.string,
-//   // to: PropTypes.string,
-//   handleSubmit: PropTypes.func
-// }
 
 export default Home

@@ -1,41 +1,34 @@
 import styled from 'styled-components'
 
 export const Container = styled.form`
-  border-radius: 1em;
+  border-radius: 8px;
   background: white;
-  margin: 3em auto;
-  padding: 3em 3em 1em;
-  max-width: 500px;
-  min-height: auto;
+  // margin: 3em auto;
+  padding: .8em;
+  min-width: 450px;
+  max-height: 75px;
   box-shadow: ${({ theme }) => theme.shadow};
+  display: flex;
+  // justify-content: space-between;
+  // align-items: center;
 
-  @media(max-width: 767px){
-    padding: 20px 20px 20px;
-    // width: initial;
+  @media(max-width: 425px) {
+    // background: red;
+    min-width: 370px;
   }
+
   @media(max-width: 1023px){
     width: 90%
   }
 `
 export const Label = styled.label`
-  color: ${({ theme: { color } }) => color.primary}; 
-  position: relative;
-  font-weight: bold; 
-  display: block; 
-`
-
-export const Required = styled.span`
-  color: ${({ theme: { color } }) => color.red}; 
-  position: absolute;
-  top: -8px;
-`
-
-export const Note = styled.span`
-  color: ${({ theme: { color } }) => color.red}; 
+  color: ${({ theme: { color } }) => color.dark};
   font-size: 12px;
+  // position: relative;
+  font-weight: 400;
   display: block;
-  margin-top: 4em;
-  text-align: right;
+  width: 100%;
+  margin-right: 16px;
 `
 
 export const Input = styled.input`
@@ -49,14 +42,14 @@ export const Input = styled.input`
   font-family: ${({ theme }) => theme.font.main};
   color: ${({ theme: { color } }) => color.dark};
   padding: 0 5px;
-  margin-bottom: 3em;
+  // margin-bottom: 3em;
 `
 
 export const Dropdown = styled.select`
   display: block;
   background: transparent;
   border: 1px solid;
-  width: 100%;
+  width: 200px;
   height: 30px;
   border-radius: 8px;
   outline-color: ${({ theme: { color } }) => color.primary};

@@ -1,8 +1,8 @@
 import React from 'react'
 import Link from '../Button'
 // import { useHistory } from 'react-router-dom'
-import { Container, Label, Required, Note, Input, Dropdown } from './styles'
-// import { dependencies } from '../../utils/dependencies'
+import { Container, Label, Input, Dropdown } from './styles'
+import search from '../../images/search.svg'
 import { acronysm } from '../../utils/acronysm'
 import PropTypes from 'prop-types'
 
@@ -32,7 +32,7 @@ const Form = ({ handleSearch, setState, state }) => {
     <>
       <Container>
         <Label>
-          Dependencia <Required>*</Required>
+          Dependencia
           {/* <Input onChange={handleInputChange} type="text" name="dependencia"/> */}
           <Input
             list="dependencias"
@@ -57,11 +57,10 @@ const Form = ({ handleSearch, setState, state }) => {
             <option value="12" name="ultimo-anho">Último año</option>
           </Dropdown>
         </Label>
-        <Note>* Campos obligatorios</Note>
+        <Link handleSubmit={handleSearch}>
+          <img src={search} alt="Lupa"/>
+        </Link>
       </Container>
-      <Link handleSubmit={handleSearch}>
-        Buscar
-      </Link>
     </>
   )
 }
