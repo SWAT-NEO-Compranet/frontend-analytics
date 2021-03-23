@@ -25,12 +25,10 @@ function App () {
     loading: true
   })
 
-  const handleSearch = (e) => {
-    e.preventDefault()
-
+  const handleSearch = (url) => {
     setState({ ...state, loading: true })
 
-    fetch('https://neo-analytics-backend.herokuapp.com/api/dependencies/details', {
+    fetch(url, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -51,7 +49,11 @@ function App () {
       <Switch>
           <Route exact path="/">
             <Home>
-              <Form handleSearch={handleSearch} setState={setState} state={state} />
+              <Form
+                handleSearch={handleSearch}
+                setState={setState}
+                state={state}
+              />
             </Home>
           </Route>
           <Route exact path="/results/:id" component={Results} />
@@ -60,7 +62,11 @@ function App () {
               ? <Route exact path="/dashboard">
                   <Dashboard setState={setState} state={state}>
                     <ChartDashboard state={state} />
-                    <CardDashboard cards={state.search} loading={state.loading} />
+                    <CardDashboard
+                      cards={state.search}
+                      loading={state.loading}
+                      handleSearch={handleSearch}
+                    />
                   </Dashboard>
                 </Route>
               : <Redirect to="/" />
