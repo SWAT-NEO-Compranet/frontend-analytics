@@ -5,14 +5,14 @@ import { LoadingCard } from '../Loading'
 import PropTypes from 'prop-types'
 import PagingControls from '../PagingControls'
 
-function CardDashboard ({ cards, loading, handleSearch }) {
+function CardDashboard ({ cards, loadPag, handleSearch, error }) {
   const cardsLoad = [1, 2, 3, 4, 5]
 
   return (
     <CardsWrapper>
       <Subtitle>Contratos</Subtitle>
       <CardsScroll>
-      {loading
+      {loadPag
         ? cardsLoad.map(card => <LoadingCard key={card} />)
         : (cards?.contracts.data !== 0
             ? cards?.contracts.data.map(card => <Card key={card.id} cardsInfo={card} />)
@@ -25,6 +25,7 @@ function CardDashboard ({ cards, loading, handleSearch }) {
             prevPage={cards?.contracts.prev_page_url}
             nextPage={cards?.contracts.next_page_url}
             handleSearch={handleSearch}
+            error={error}
           />
       }
 
@@ -35,8 +36,9 @@ function CardDashboard ({ cards, loading, handleSearch }) {
 
 CardDashboard.propTypes = {
   cards: PropTypes.array,
-  loading: PropTypes.bool,
-  handleSearch: PropTypes.func
+  loadPag: PropTypes.bool,
+  handleSearch: PropTypes.func,
+  error: PropTypes.string
 }
 
 export default CardDashboard
