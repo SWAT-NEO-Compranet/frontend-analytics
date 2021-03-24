@@ -34,3 +34,9 @@ export const Button = styled.button`
     transition: .2s;
   }
 `
+
+export const Danger = styled.p`
+  margin: 0 3em;
+  text-align: center;
+  color: #d9534f;
+`

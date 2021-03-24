@@ -25,7 +25,17 @@ export const CardsScroll = styled.div`
   // background: salmon;
   padding-top: 1em;
   max-height: 900px;
-  overflow: scroll;
+  overflow-y: scroll;
+  overflow: auto;
+
+  &::-webkit-scrollbar {
+    width: 0.5em;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background-color: ${({ theme: { color } }) => color.primary};
+    border-radius: 1rem;
+  }
 
   @media (max-width: 768px) {
     max-height: 465px;

@@ -22,11 +22,24 @@ function App () {
     dependence: null,
     interval: null,
     search: null,
-    loading: true
+    loading: true,
+    loadPag: false,
+    error: null
   })
 
-  const handleSearch = (url) => {
-    setState({ ...state, loading: true })
+  const handleSearch = (url, paging) => {
+    if (paging === true) {
+      setState({
+        ...state,
+        loadPag: true
+      })
+    } else {
+      setState({
+        ...state,
+        loadPag: true,
+        loading: true
+      })
+    }
 
     fetch(url, {
       method: 'POST',
@@ -39,8 +52,22 @@ function App () {
       })
     })
       .then(res => res.json())
-      .then(({ dependence }) => setState({ ...state, search: dependence, loading: false }))
-      .catch(e => console.error(e))
+      .then(({ dependence }) => setState({
+        ...state,
+        search: dependence,
+        loading: false,
+        loadPag: false,
+        error: null
+      }))
+      .catch(e => {
+        console.error(e)
+        setState({
+          ...state,
+          loading: false,
+          loadPag: false,
+          error: 'ha habido un error al cargar la data'
+        })
+      })
     history.push('/dashboard')
   }
 
@@ -64,8 +91,9 @@ function App () {
                     <ChartDashboard state={state} />
                     <CardDashboard
                       cards={state.search}
-                      loading={state.loading}
+                      loadPag={state.loadPag}
                       handleSearch={handleSearch}
+                      error={state.error}
                     />
                   </Dashboard>
                 </Route>
