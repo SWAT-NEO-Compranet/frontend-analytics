@@ -29,6 +29,15 @@ export const GlobalStyle = createGlobalStyle`
   h1, h2, h3, h4, h5, h6, p {
     margin: 0;
   }
+
+  body::-webkit-scrollbar {
+    width: 0.5em;
+  }
+
+  body::-webkit-scrollbar-thumb {
+    background-color: ${theme.color.primary};
+    border-radius: 1rem;
+  }
 `
 
 // Skeleton animation
