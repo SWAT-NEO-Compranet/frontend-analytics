@@ -8,7 +8,8 @@ export const theme = {
     gray: '#F8F8F8',
     dark: '#20003D',
     red: '#DA009A',
-    orange: '#FF7848'
+    orange: '#FF7848',
+    scroll: '#b8b5ff'
   },
   font: {
     main: 'Poppins, sans-serif'

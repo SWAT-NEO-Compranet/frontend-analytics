@@ -30,6 +30,7 @@ export const CardsScroll = styled.div`
 
   &::-webkit-scrollbar {
     width: 0.5em;
+    background-color: ${({ theme: { color } }) => color.scroll};
   }
   
   &::-webkit-scrollbar-thumb {

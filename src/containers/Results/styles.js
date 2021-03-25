@@ -41,6 +41,7 @@ export const Subtitle = styled.h2`
 
 export const FooterCard = styled.footer`
   display: flex;
+  align-items: center;
   justify-content: space-between;
   margin: 2.5em .7em;
 `
@@ -79,12 +80,20 @@ export const InfoCell = styled.div`
   box-shadow: ${({ theme }) => theme.shadow};
   /* width: 500px;
   margin: 0 auto; */
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `
 
 export const Campo = styled.h3`
   color: ${({ theme: { color } }) => color.dark};
   font-weight: normal;
   font-size: .8em;
+
+  @media (max-width: 768px) {
+    font-size: .9em;
+  }
 `
 
 export const Valor = styled.p`

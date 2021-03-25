@@ -6,11 +6,13 @@ export const Modal = styled.div`
   box-shadow: ${({ theme }) => theme.shadow};
   position: absolute;
   top: 0;
-  bottom: 0;
   left: 0;
   right: 0;
-  padding: 4em 0 0;
-  height: 127vh;
+  padding: 4em 0 15em 0;
+
+  @media (max-width: 768px) {
+    padding-bottom: 20em;
+  }
 `
 
 export const ModalWrapper = styled.div`
@@ -23,6 +25,11 @@ export const ModalWrapper = styled.div`
   // width: 600px;
   display: flex;
   flex-direction: column;
+
+  @media (max-width: 768px) {
+    padding: 1.5em;
+    max-width: 90%;
+  }
 `
 
 export const ExitButtonTop = styled.div`
