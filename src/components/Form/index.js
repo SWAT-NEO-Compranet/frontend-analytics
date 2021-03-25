@@ -54,7 +54,11 @@ const Form = ({ handleSearch, setState, state }) => {
             {/* <option></option> */}
             <option value="3" name="3-meses">3 meses</option>
             <option value="6" name="6-meses">6 meses</option>
-            <option value="12" name="ultimo-anho">Último año</option>
+            <option value="12" name="last_year">Último año</option>
+            <option value="24" name="last_two_years">Últimos dos año</option>
+            <option value="36" name="last_three_years">Últimos tres año</option>
+            <option value="48" name="last_four_years">Últimos cuatro año</option>
+            <option value="60" name="last_five_years">Últimos cinco año</option>
           </Dropdown>
         </Label>
         <Link handleSubmit={handleSearch}>
